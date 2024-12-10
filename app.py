@@ -2,8 +2,7 @@ from dotenv import load_dotenv
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 import streamlit as st
-# Load environment variables
-load_dotenv()
+
 
 # Set page configuration
 st.set_page_config(
@@ -12,6 +11,9 @@ st.set_page_config(
     layout="wide",                       # Layout: "centered" (default) or "wide"
     initial_sidebar_state="expanded"     # Sidebar state: "auto", "expanded", or "collapsed"
 )
+
+# Load environment variables
+load_dotenv()
 
 # # CSS to hide the footer and GitHub logo
 # hide_streamlit_style = """

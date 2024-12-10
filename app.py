@@ -13,18 +13,15 @@ st.set_page_config(
     initial_sidebar_state="expanded"     # Sidebar state: "auto", "expanded", or "collapsed"
 )
 
-
-
-
-# CSS to hide the footer and GitHub logo
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+# # CSS to hide the footer and GitHub logo
+# hide_streamlit_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             header {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 

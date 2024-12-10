@@ -2,6 +2,6 @@ langchain-google-genai
 streamlit==1.22.0
 python-dotenv
 langchain
- 
+youtube_transcript_api
  
  

@@ -3,15 +3,6 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 import streamlit as st
 
-# CSS to hide the footer and GitHub logo
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 
@@ -28,6 +19,15 @@ load_dotenv()
 
 
 
+# CSS to hide the footer and GitHub logo
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 

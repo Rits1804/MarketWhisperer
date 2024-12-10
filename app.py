@@ -32,6 +32,26 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 
+def standardize_youtube_url(url):
+    """
+    Converts a YouTube URL into the standard desktop format.
+    
+    Args:
+        url (str): The original YouTube URL.
+    
+    Returns:
+        str: The standardized YouTube URL.
+    """
+    if "youtu.be" in url:  # Mobile YouTube URL
+        # Extract the video ID
+        video_id = url.split('/')[-1].split('?')[0]
+        return f"https://www.youtube.com/watch?v={video_id}"
+    elif "youtube.com" in url:  # Already a desktop YouTube URL
+        return url
+    else:
+        raise ValueError("Invalid YouTube URL format")
+
+   
 def extract_transcript_details(youtube_video_url):
     """
     Extracts the transcript from a YouTube video.
@@ -73,9 +93,10 @@ def main():
     youtube_url = st.text_input("Enter YouTube Video URL:")
     # Only call the model when the button is pressed
     if st.button("Generate"):
-        if youtube_url:
+        corrected_url=standardize_youtube_url(youtube_url)
+        if corrected_url:
             with st.spinner("Almost there! We're gathering the insights..."):
-                transcript_input=extract_transcript_details(youtube_url)
+                transcript_input=extract_transcript_details(corrected_url)
                 if transcript_input:
                     # Summarize the transcript using ChatGoogleGenerativeAI
                     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.5, GOOGLE_API_KEY=GOOGLE_API_KEY)
@@ -87,7 +108,7 @@ def main():
                     Suggestions/Recommendations: Note any advice, strategies, or recommendations regarding stock market investments.
                     Positives: Discuss the positive aspects, trends, or opportunities in the stock market or specific stocks.
                     Negatives: Discuss any negative points, risks, or concerns raised about the stock market or specific stocks.
-                    The summary should be thorough, ensuring all major aspects are covered in a clear, informative, and well-rounded manner, without missing any important details. Do not answer if provided content is not for finance related or related to it.
+                    The summary should be thorough, ensuring all major aspects are covered in a clear, informative, and well-rounded manner, without missing any important details. Do not mention that this information is derived from a video or any other source.
                     """
                     
                     # Generate the summary using LLM

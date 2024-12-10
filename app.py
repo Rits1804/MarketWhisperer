@@ -6,6 +6,20 @@ import streamlit as st
 load_dotenv()
 
 
+# CSS to hide the footer and GitHub logo
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
+
+
+
 # Set page configuration
 st.set_page_config(
     page_title="YT Insights",       # Title of the page (appears in browser tab)

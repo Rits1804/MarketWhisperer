@@ -5,6 +5,16 @@ import streamlit as st
 # Load environment variables
 load_dotenv()
 
+# Set page configuration
+st.set_page_config(
+    page_title="YT Insights",       # Title of the page (appears in browser tab)
+    page_icon=":guardsman:",             # Icon for the page (can be emoji or file path)
+    layout="wide",                       # Layout: "centered" (default) or "wide"
+    initial_sidebar_state="expanded"     # Sidebar state: "auto", "expanded", or "collapsed"
+)
+
+
+
 
 # CSS to hide the footer and GitHub logo
 hide_streamlit_style = """
@@ -20,13 +30,6 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 
-# Set page configuration
-st.set_page_config(
-    page_title="YT Insights",       # Title of the page (appears in browser tab)
-    page_icon=":guardsman:",             # Icon for the page (can be emoji or file path)
-    layout="wide",                       # Layout: "centered" (default) or "wide"
-    initial_sidebar_state="expanded"     # Sidebar state: "auto", "expanded", or "collapsed"
-)
 
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")

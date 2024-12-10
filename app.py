@@ -87,7 +87,7 @@ def main():
                     Suggestions/Recommendations: Note any advice, strategies, or recommendations regarding stock market investments.
                     Positives: Discuss the positive aspects, trends, or opportunities in the stock market or specific stocks.
                     Negatives: Discuss any negative points, risks, or concerns raised about the stock market or specific stocks.
-                    The summary should be thorough, ensuring all major aspects are covered in a clear, informative, and well-rounded manner, without missing any important details. Do not answer if provided content is not for finance related.
+                    The summary should be thorough, ensuring all major aspects are covered in a clear, informative, and well-rounded manner, without missing any important details. Do not answer if provided content is not for finance related or related to it.
                     """
                     
                     # Generate the summary using LLM

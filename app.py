@@ -92,7 +92,8 @@ def main():
     # Input field for transcript
     youtube_url = st.text_input("Enter YouTube Video URL:")
     # Only call the model when the button is pressed
-    if st.button("Generate"):
+    if st.button("Generate") and youtube_url:
+        
         corrected_url=standardize_youtube_url(youtube_url)
         if corrected_url:
             with st.spinner("Almost there! We're gathering the insights..."):
@@ -122,7 +123,9 @@ def main():
                     st.markdown(summary)
 
                 else:
-                    st.error("Please enter a transcript.")
-
+                    # st.error("Please enter a transcript.")
+                    pass
+    else:
+        st.error("please enter valid url")
 if __name__ == "__main__":
     main()

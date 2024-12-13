@@ -110,6 +110,7 @@ def main():
                     Positives: Discuss the positive aspects, trends, or opportunities in the stock market or specific stocks.
                     Negatives: Discuss any negative points, risks, or concerns raised about the stock market or specific stocks.
                     The summary should be thorough, ensuring all major aspects are covered in a clear, informative, and well-rounded manner, without missing any important details. Do not mention that this information is derived from a video or any other source.
+                    Use simple words in your language.
                     """
                     
                     # Generate the summary using LLM

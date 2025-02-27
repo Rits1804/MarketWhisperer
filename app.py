@@ -127,6 +127,7 @@ def main():
                     # st.error("Please enter a transcript.")
                     pass
     else:
-        st.error("please enter valid url")
+        # st.error("please enter valid url")
+        pass
 if __name__ == "__main__":
     main()
